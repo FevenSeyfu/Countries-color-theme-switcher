@@ -1,8 +1,12 @@
 import React from 'react'
 
-const CountryCard = () => {
+const CountryCard = ({country}) => {
+  console.log(country)
   return (
-    <div>CountryCard</div>
+    <div className='border w-40'>
+     {/* {console.log(country)} */}
+      country
+    </div>
   )
 }
 

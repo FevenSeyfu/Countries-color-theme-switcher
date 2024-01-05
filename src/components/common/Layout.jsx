@@ -12,7 +12,7 @@ const Layout =({children}) =>{
          darkMode={darkMode} 
          toggleDarkMode={toggleDarkMode} 
         />
-        <main >
+        <main className='px-4 py-8  md:px-16 bg-gray-100 h-screen'>
             {children}
         </main>
         </>

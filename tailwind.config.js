@@ -13,7 +13,7 @@ export default {
         // light mode
         'dark-gray': 'hsl(0, 0%, 52%)', //input
         'very-dark-blue': 'hsl(200, 15%, 8%)', //text
-        'very-light-gray': 'hsl(200, 15%, 8%)', //backgound
+        'very-light-gray': 'hsl(0°, 15%, 98%)', //backgound
 
         // dark mode
         'dark-blue': 'hsl(209, 23%, 22%)', //elements
