@@ -1,11 +1,20 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Navbar from './Navbar';
 
 const Layout =({children}) =>{
+    const [darkMode, setDarkMode] = useState(true)
+    const toggleDarkMode = ()=> {
+        setDarkMode(darkMode=== 'light' ? 'dark' : 'light')
+    }
     return(
         <>
-        <Navbar />
-        <main>{children}</main>
+        <Navbar 
+         darkMode={darkMode} 
+         toggleDarkMode={toggleDarkMode} 
+        />
+        <main >
+            {children}
+        </main>
         </>
     )
 }

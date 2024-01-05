@@ -1,14 +1,18 @@
-import React from 'react'
-import Header from './Header'
-import ThemeToggle from './ThemeToggle'
+import React from "react";
+import { IoMoonOutline } from "react-icons/io5";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
-    <div>
-        <Header />
-        <ThemeToggle />
+    <div className="bg-white text-black dark:bg-dark-blue dark:text-white flex justify-between px-4 py-8  md:px-16 shadow-lg shadow-gray-300 items-center">
+      <h1 className="text-lg font-black">Where in the world?</h1>
+      <div>
+        <button className="flex items-center gap-2 font-black" onClick={props.toggleDarkMode}>
+          <IoMoonOutline />
+          Dark Mode
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
