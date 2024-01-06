@@ -41,10 +41,10 @@ const CountryDetail = ({ alpha3Code }) => {
   }, []);
   return (
     <div className="flex flex-col items-center lg:flex-row lg:items-stretch lg:gap-24  mt-12 h-[400px]">
-      <img src={flags && flags.png} alt={`${name} flag`} className="md:w-2/5" />
-      <div className="flex flex-col py-8 gap-12 w-full">
+      <img src={flags && flags.png} alt={`${name} flag`} className="w-full md:w-2/5" />
+      <div className="flex flex-col py-8 gap-6 md:gap-12 w-full">
         <h1 className="font-extrabold text-2xl md:text-4xl">{country.name}</h1>
-        <div className="flex flex-col lg:flex-row lg:justify-between w-full  text-xl">
+        <div className="flex flex-col lg:flex-row lg:justify-between w-full text:md  md:text-xl">
           <ul className="flex flex-col gap-2 md:gap-4">
             <li>
               <span className="font-extrabold ">Native Name : </span>
@@ -88,11 +88,11 @@ const CountryDetail = ({ alpha3Code }) => {
             <span className="text-xl md:text-2xl font-extrabold">
               Border Countries:
             </span>
-            <ul className="flex flex-row flex-wrap	 gap-2 items-center">
+            <ul className="flex flex-row flex-wrap gap-4 items-center">
               {borderCountries.map((border) => (
                 <li
                   key={border}
-                  className="shadow-md shadow-gray-400 bg-white py-1 px-4"
+                  className="shadow-sm shadow-gray-400 bg-white py-1 px-4"
                 >
                   {border}
                 </li>
