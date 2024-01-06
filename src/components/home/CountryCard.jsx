@@ -6,7 +6,7 @@ const CountryCard = ({country}) => {
   const navigate = useNavigate();
   const {alpha3Code,name,flags,population,region,capital} = country
   const handleClick = () =>{
-    navigate(`/country/${alpha3Code}`)
+    navigate(`/${alpha3Code}`)
   }
   return (
     <div className='flex flex-col rounded-2xl text-wrap' onClick={handleClick}>
