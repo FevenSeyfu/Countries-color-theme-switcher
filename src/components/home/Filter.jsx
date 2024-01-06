@@ -13,7 +13,7 @@ const Filter = () => {
     <div className="relative inline-block">
       <button
         onClick={() => setMenuOpen(!isMenuOpen)}
-        className="flex justify-between items-center py-4 px-4 text-lg shadow bg-white w-[200px] "
+        className="flex justify-between items-center py-4 px-4 text-md shadow bg-white w-[200px] "
       >
         Filter by Region
         <FaChevronDown className="text-black" />
