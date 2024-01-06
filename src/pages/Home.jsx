@@ -27,8 +27,8 @@ const Home = () => {
         <Filter />
       </div>
 
-      <div className="grid  md:grid-cols-4 gap-8 mt-12">
-        {countries.map((country) => (
+      <div className="grid  md:grid-cols-4  gap-12 my-8">
+        {countries.slice(0, 8).map((country) => (
           <CountryCard key={country.alpha3Code} country={country} />
         ))}
       </div>
