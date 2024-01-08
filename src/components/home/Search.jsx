@@ -15,7 +15,7 @@ const Search = () => {
   };
 
   return (
-    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-white text-black'} flex gap-2 shadow p-2 md:p-2 text-lg items-center bg-white sm:w-[300px] md:w-[450px]`}>
+    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-white text-black'} flex gap-2 shadow p-2 md:p-2 text-lg items-center  sm:w-[300px] md:w-[450px]`}>
       <IoSearch/>
       <input
         type="text"
