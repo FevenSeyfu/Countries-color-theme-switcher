@@ -6,6 +6,7 @@ import Filter from "../components/home/Filter";
 import CountryCard from "../components/home/CountryCard";
 
 const Home = () => {
+  
   const {
     fetchCountries,
     filterCountriesByRegion,
@@ -22,7 +23,7 @@ const Home = () => {
   const displayCountries = filteredCountries.length > 0 ? filteredCountries : countries;
   return (
     <Layout>
-      <div className="flex flex-col justify-between gap-4 md:flex-row">
+      <div className="flex flex-col justify-between gap-4 md:flex-row ">
         <Search />
          <Filter onFilter={filterCountriesByRegion} />
       </div>
