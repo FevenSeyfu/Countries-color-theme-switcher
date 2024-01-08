@@ -18,7 +18,7 @@ const Filter = () => {
   };
 
   return (
-    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-gray-100 text-black'} relative inline-block`}>
+    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-white text-black'} relative inline-block`}>
       <button
         onClick={() => setMenuOpen(!isMenuOpen)}
         className="flex justify-between items-center py-4 px-4 text-md shadow w-[200px] "

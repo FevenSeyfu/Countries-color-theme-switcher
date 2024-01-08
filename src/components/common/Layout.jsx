@@ -10,7 +10,7 @@ const Layout =({children}) =>{
         <Navbar 
         />
         
-        <main className={`${theme === 'dark' ? 'bg-very-dark-blue text-white' : 'bg-gray-100 text-black'}px-6 py-8  md:px-16 bg-gray-100 w-full h-full md:h-screen`}>
+        <main className={`${theme === 'dark' ? 'bg-very-dark-blue text-white' : 'bg-gray-100 text-black'}px-6 py-8  md:px-16 bg-gray-100 w-full h-full`}>
             {children}
         </main>
         </>
