@@ -11,6 +11,7 @@ const Home = () => {
     filterCountriesByRegion,
     countries,
     filteredCountries,
+    selectedRegion
   } = useCountryContext();
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const Home = () => {
       </div>
 
       <div className="grid md:grid-cols-2  lg:grid-cols-4  gap-12 my-8">
-        {filteredCountries.slice(0, 8).map((country) => (
+      {(selectedRegion === "" ? countries : filteredCountries).slice(0, 8).map((country) => (
           <CountryCard key={country.alpha3Code} country={country} />
         ))}
       </div>

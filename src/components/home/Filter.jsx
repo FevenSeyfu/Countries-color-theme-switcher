@@ -4,16 +4,17 @@ import { useCountryContext } from "../../context/CountryContext.jsx";
 
 const Filter = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
-  const { countries, filterCountriesByRegion } = useCountryContext();
+  const [selectedOption, setSelectedOption] = useState('');
+  const { filterCountriesByRegion } = useCountryContext();
 
-  const options = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
+  const options = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
   const handleSelectChange = (option) => {
     setSelectedOption(option);
     setMenuOpen(false);
     filterCountriesByRegion(option);
   };
+
   return (
     <div className="relative inline-block">
       <button

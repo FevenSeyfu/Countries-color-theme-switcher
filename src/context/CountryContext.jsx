@@ -20,7 +20,7 @@ const CountryProvider = ({ children }) => {
   const filterCountriesByRegion = (region) => {
     setSelectedRegion(region);
 
-    if (region === 'All') {
+    if (region === "All" || region === "") {
       setFilteredCountries(countries);
     } else {
       const filtered = countries.filter((country) => country.region === region);
