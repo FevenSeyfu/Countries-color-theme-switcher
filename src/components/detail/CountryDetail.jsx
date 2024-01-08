@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom';
 
 const CountryDetail = ({ alpha3Code }) => {
   const [country, setCountry] = useState([]);
@@ -6,7 +7,6 @@ const CountryDetail = ({ alpha3Code }) => {
   const {
     name,
     flags,
-    borders,
     nativeName,
     population,
     region,
@@ -28,7 +28,7 @@ const CountryDetail = ({ alpha3Code }) => {
         if (selectedCountry.borders) {
           const borderCountry = selectedCountry.borders.map((border) => {
             let country = data.find((country) => country.alpha3Code === border);
-            return country.name;
+            return [country.name,border];
           });
           setBorderCountries(borderCountry);
         }
@@ -37,8 +37,11 @@ const CountryDetail = ({ alpha3Code }) => {
         console.log("error fetching countries", error);
       }
     };
+    
+
     fetchCountries();
-  }, []);
+  }, [alpha3Code]);
+ 
   return (
     <div className="flex flex-col items-center lg:flex-row lg:items-stretch lg:gap-24  mt-12 h-[400px]">
       <img src={flags && flags.png} alt={`${name} flag`} className="w-full md:w-2/5" />
@@ -84,6 +87,7 @@ const CountryDetail = ({ alpha3Code }) => {
           </ul>
         </div>
         {borderCountries.length > 0 && (
+         
           <div className="flex flex-col  gap-2 md:flex-row md:items-center ">
             <span className="text-xl md:text-2xl font-extrabold">
               Border Countries:
@@ -91,10 +95,11 @@ const CountryDetail = ({ alpha3Code }) => {
             <ul className="flex flex-row flex-wrap gap-4 items-center">
               {borderCountries.map((border) => (
                 <li
-                  key={border}
+                  key={border[1]}
                   className="shadow-sm shadow-gray-400 bg-white py-1 px-4"
+                 
                 >
-                  {border}
+                  <Link to={`/${border[1]}`}> {border[0]}</Link>
                 </li>
               ))}
             </ul>
