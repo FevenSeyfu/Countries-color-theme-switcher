@@ -27,12 +27,27 @@ const CountryProvider = ({ children }) => {
       setFilteredCountries(filtered);
     }
   };
+
+  // Search by name 
+  const filterCountriesByName = (name) => {
+    if (!name) {
+       setFilteredCountries(countries);
+      return;
+    }
+  
+    const filtered = countries.filter((country) =>
+      country.name.toLowerCase().includes(name.toLowerCase())
+    );
+    setFilteredCountries(filtered);
+  };
+
   const contextValue = {
     countries,
     filteredCountries,
     selectedRegion,
     fetchCountries,
     filterCountriesByRegion,
+    filterCountriesByName
   };
 
   return (
