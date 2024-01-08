@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CountryProvider } from "./context/CountryContext";
+import { CountryProvider } from "./context/CountryContext.jsx";
 import Home from "./pages/Home";
 import DetailsPage from "./pages/DetailsPage";
 import NoPage from "./pages/NoPage";

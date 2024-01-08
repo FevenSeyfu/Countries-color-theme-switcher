@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useCountryContext } from "../context/CountryContext";
+import { useCountryContext } from "../context/CountryContext.jsx";
 import Layout from "../components/common/Layout";
 import Search from "../components/home/Search";
 import Filter from "../components/home/Filter";

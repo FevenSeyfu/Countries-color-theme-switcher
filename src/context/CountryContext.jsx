@@ -1,11 +1,11 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from 'react';
 
 const CountryContext = createContext();
 
 const CountryProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState('');
 
   const fetchCountries = async () => {
     try {
@@ -18,26 +18,25 @@ const CountryProvider = ({ children }) => {
   };
 
   const filterCountriesByRegion = (region) => {
-    selectedRegion(region);
+    setSelectedRegion(region);
 
-    if (region === "All") {
+    if (region === 'All') {
       setFilteredCountries(countries);
     } else {
       const filtered = countries.filter((country) => country.region === region);
       setFilteredCountries(filtered);
     }
   };
+  const contextValue = {
+    countries,
+    filteredCountries,
+    selectedRegion,
+    fetchCountries,
+    filterCountriesByRegion,
+  };
 
   return (
-    <CountryContext.Provider
-      value={{
-        countries,
-        filteredCountries,
-        selectedRegion,
-        fetchCountries,
-        filterCountriesByRegion,
-      }}
-    >
+    <CountryContext.Provider value={contextValue}>
       {children}
     </CountryContext.Provider>
   );
