@@ -1,17 +1,18 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
-
+import { useTheme } from '../../context/ThemeContext';
 
 const CountryCard = ({country}) => {
+  const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const {alpha3Code,name,flags,population,region,capital} = country
   const handleClick = () =>{
     navigate(`/${alpha3Code}`)
   }
   return (
-    <div className='flex flex-col rounded-2xl text-wrap' onClick={handleClick}>
+    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-gray-100 text-black'} flex flex-col rounded-lg text-wrap`} onClick={handleClick}>
       <img src={flags.png} alt="Flag"  className='md:h-[150px]'/>
-      <div className=' bg-white flex flex-col p-4 '>
+      <div className=' flex flex-col p-4 '>
         <h3 className='font-extrabold  text-lg '>{name}</h3>
         <ul>
           <li className='text-wrap'>Population:{population}</li>
