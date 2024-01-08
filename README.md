@@ -1,6 +1,6 @@
 # Frontend Mentor - REST Countries API with color theme switcher solution
 
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). A simple app that fetches countries data from ana api and displays with extended features to filter by region,seach countires by name and theme switcher between dark and light.
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). A simple app that fetches countries data from an api and displays with extended features to filter by region,search countires by name and theme switcher between dark and light.
 
 ## Table of contents
 
@@ -30,7 +30,7 @@ Users are able to:
 
 ### Screenshot
 
-![](./desktop-preview.jpg)
+![Rest Countries demo](https://github.com/FevenSeyfu/Countries-color-theme-switcher/blob/dev/desktop-preview.jpg)
 
 ### Links
 
