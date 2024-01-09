@@ -13,7 +13,7 @@ const CountryCard = ({country}) => {
     <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-gray-100 text-black'} flex flex-col rounded-lg text-wrap`} onClick={handleClick}>
       <img src={flags.png} alt="Flag"  className='md:h-[150px]'/>
       <div className=' flex flex-col p-4 '>
-        <h3 className='font-extrabold  text-lg '>{name}</h3>
+        <h1 className='font-extrabold  text-lg '>{name}</h1>
         <ul>
           <li className='text-wrap'>Population:{population}</li>
           <li>Region:{region}</li>
