@@ -30,13 +30,13 @@ const Home = () => {
           theme === "dark"
             ? "bg-very-dark-blue text-white"
             : "bg-gray-100 text-black"
-        } px-6  md:px-16  flex flex-1 flex-col h-full `}
+        } px-6  md:px-16  flex flex-1 flex-col h-screen`}
       >
         <div className="flex flex-col justify-between gap-4 md:flex-row my-8">
           <Search />
           <Filter onFilter={filterCountriesByRegion} />
         </div>
-        <div className="grid md:grid-cols-2  lg:grid-cols-4  gap-8 my-4">
+        <div className="grid md:grid-cols-2  lg:grid-cols-4  gap-16 my-8">
           {displayCountries.slice(0, 8).map((country) => (
             <CountryCard key={country.alpha3Code} country={country} />
           ))}
