@@ -37,14 +37,14 @@ const Home = () => {
   return (
     <Layout>
       <div
-        className='px-6  md:px-16  flex flex-1 flex-col pb-24  h-screen justify-between'
+        className='px-6  md:px-16  flex flex-1 flex-col  h-screen justify-evenly'
       >
-        <div className="flex flex-col justify-between gap-4 md:flex-row my-8">
+        <div className="flex flex-col justify-between gap-4 md:flex-row ">
           <Search />
           <Filter onFilter={filterCountriesByRegion} />
         </div>
         <div className="flex flex-col items-center">
-          <div className="grid md:grid-cols-2  lg:grid-cols-4  gap-x-16 gap-y-8 my-4">
+          <div className="grid md:grid-cols-2  lg:grid-cols-4  gap-12">
             {currentCountries.map((country) => (
               <CountryCard key={country.alpha3Code} country={country} />
             ))}
