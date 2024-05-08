@@ -18,10 +18,10 @@ const Filter = () => {
   };
 
   return (
-    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-white text-black'} relative inline-block`}>
+    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-white text-black'} w-[300px]  relative inline-block rounded-md`}>
       <button
         onClick={() => setMenuOpen(!isMenuOpen)}
-        className="flex justify-between items-center py-4 px-4 text-md shadow w-[200px] "
+        className="flex justify-between items-center py-4 px-4 text-lg shadow w-[300px] "
       >
         Filter by Region
         <FaChevronDown />
@@ -36,7 +36,7 @@ const Filter = () => {
               <button
                 key={option}
                 onClick={() => handleSelectChange(option)}
-                className={`${theme === 'dark' ? 'text-white hover:bg-gray-800 hover:text-gray-200 ':'text-black hover:bg-gray-100 hover:text-gray-900' } block w-full px-4 py-2 text-md font-medium text-left  `}
+                className={`${theme === 'dark' ? 'text-white hover:bg-gray-800 hover:text-gray-200 ':'text-black hover:bg-gray-100 hover:text-gray-900' } block w-full px-4 py-2 text-lg font-medium text-left  `}
               >
                 {option}
               </button>

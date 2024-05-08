@@ -37,9 +37,9 @@ const Home = () => {
   return (
     <Layout>
       <div
-        className='px-6  md:px-16  flex flex-1 flex-col  h-screen justify-evenly'
+        className='px-6  md:px-16  flex flex-1 flex-col  h-screen lg:justify-evenly'
       >
-        <div className="flex flex-col justify-between gap-4 md:flex-row ">
+        <div className="flex flex-col gap-6 my-8 md:justify-between md:flex-row ">
           <Search />
           <Filter onFilter={filterCountriesByRegion} />
         </div>
