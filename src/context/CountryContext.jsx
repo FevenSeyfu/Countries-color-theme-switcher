@@ -1,11 +1,12 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState,useEffect } from "react";
 
 const CountryContext = createContext();
 
 const CountryProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState("");
+  const [displayedCountries, setDisplayedCountries] = useState([]);
 
   const fetchCountries = async () => {
     try {
@@ -28,18 +29,31 @@ const CountryProvider = ({ children }) => {
     }
   };
 
-  // Search by name 
+  // Search by name
   const filterCountriesByName = (name) => {
     if (!name) {
-       setFilteredCountries(countries);
+      setFilteredCountries(countries);
       return;
     }
-  
+
     const filtered = countries.filter((country) =>
       country.name.toLowerCase().includes(name.toLowerCase())
     );
     setFilteredCountries(filtered);
   };
+
+  // paginate countries list
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+  useEffect(() => {
+    const indexOfLastCountry = currentPage * itemsPerPage;
+    const indexOfFirstCountry = indexOfLastCountry - itemsPerPage;
+    setDisplayedCountries(filteredCountries.slice(indexOfFirstCountry, indexOfLastCountry));
+  }, [filteredCountries, currentPage, itemsPerPage]);
 
   const contextValue = {
     countries,
@@ -47,7 +61,11 @@ const CountryProvider = ({ children }) => {
     selectedRegion,
     fetchCountries,
     filterCountriesByRegion,
-    filterCountriesByName
+    filterCountriesByName,
+    currentPage,
+    itemsPerPage,
+    handlePageChange,
+    displayedCountries,
   };
 
   return (

@@ -10,7 +10,7 @@ const CountryCard = ({country}) => {
     navigate(`/${alpha3Code}`)
   }
   return (
-    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-gray-100 text-black'} flex flex-col rounded-lg text-wrap`} onClick={handleClick}>
+    <div className={`${theme === 'dark' ? 'bg-dark-blue text-white' : 'bg-white text-black'} flex flex-col rounded-lg text-wrap`} onClick={handleClick}>
       <img src={flags.png} alt="Flag"  className='md:h-[150px]'/>
       <div className=' flex flex-col p-4 '>
         <h1 className='font-extrabold  text-lg '>{name}</h1>

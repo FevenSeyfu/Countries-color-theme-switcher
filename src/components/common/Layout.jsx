@@ -1,18 +1,24 @@
-import React,{useState} from 'react';
-import Navbar from './Navbar';
+import React, { useEffect } from "react";
+import Navbar from "./Navbar";
+import { useTheme } from "../../context/ThemeContext"; 
 
-
-const Layout =({children}) =>{
-
-    return(
-        <>
-        <Navbar 
-        />
-        <main >
-            {children}
-        </main>
-        </>
-    )
-}
+const Layout = ({ children }) => {
+  const { theme, toggleTheme } = useTheme();
+  useEffect(() => {
+    if (theme === "dark") {
+      document.body.style.backgroundColor = "hsl(207, 26%, 17%)";
+      document.body.style.color = "white";
+    } else {
+      document.body.style.backgroundColor = "#f3f4f6";
+      document.body.style.color = "black";
+    }
+  }, [theme]);
+  return (
+    <div >
+      <Navbar />
+      <main>{children}</main>
+    </div>
+  );
+};
 
 export default Layout;
