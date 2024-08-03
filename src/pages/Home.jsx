@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className="px-6  md:px-16  flex flex-1 flex-col lg:justify-evenly w-full">
+      <div className="px-6  md:px-16 pb-4 flex flex-1 flex-col lg:justify-evenly w-full">
         <div className="flex flex-col gap-6 my-8 md:justify-between md:flex-row ">
           <Search />
           <Filter onFilter={filterCountriesByRegion} />
