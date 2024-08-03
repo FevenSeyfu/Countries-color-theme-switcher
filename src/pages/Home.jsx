@@ -23,7 +23,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchCountries();
-  }, [fetchCountries]);
+  }, []);
 
   const displayCountries =
     filteredCountries.length > 0 ? filteredCountries : countries;
