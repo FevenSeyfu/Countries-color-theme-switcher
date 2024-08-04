@@ -3,7 +3,8 @@ import Navbar from "./Navbar";
 import { useTheme } from "../../context/ThemeContext"; 
 
 const Layout = ({ children }) => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
+
   useEffect(() => {
     if (theme === "dark") {
       document.body.style.backgroundColor = "hsl(207, 26%, 17%)";
@@ -13,8 +14,9 @@ const Layout = ({ children }) => {
       document.body.style.color = "black";
     }
   }, [theme]);
+
   return (
-    <div >
+    <div className="overflow-x-hidden">
       <Navbar />
       <main>{children}</main>
     </div>

@@ -8,14 +8,11 @@ import { useTheme } from "../context/ThemeContext.jsx";
 import Pagination from "../components/home/Pagination.jsx";
 
 const Home = () => {
-  const { theme, toggleTheme } = useTheme();
   const {
     fetchCountries,
     filterCountriesByRegion,
-    filterCountriesByName,
     countries,
     filteredCountries,
-    selectedRegion,
     currentPage,
     itemsPerPage,
     handlePageChange,
@@ -36,26 +33,24 @@ const Home = () => {
 
   return (
     <Layout>
-      <div
-        className='px-6  md:px-16  flex flex-1 flex-col  h-screen lg:justify-evenly'
-      >
+      <div className="px-6  md:px-16 pb-4 flex flex-1 flex-col lg:justify-evenly w-full">
         <div className="flex flex-col gap-6 my-8 md:justify-between md:flex-row ">
           <Search />
           <Filter onFilter={filterCountriesByRegion} />
         </div>
-        <div className="flex flex-col items-center">
-          <div className="grid md:grid-cols-2  lg:grid-cols-4  gap-12">
+        <div className="flex flex-col items-center w-full">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full px-8 md:px-0">
             {currentCountries.map((country) => (
               <CountryCard key={country.alpha3Code} country={country} />
             ))}
           </div>
-          <Pagination
-            itemsPerPage={itemsPerPage}
-            totalItems={displayCountries.length}
-            paginate={handlePageChange}
-            currentPage={currentPage}
-          />
         </div>
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={displayCountries.length}
+          paginate={handlePageChange}
+          currentPage={currentPage}
+        />
       </div>
     </Layout>
   );

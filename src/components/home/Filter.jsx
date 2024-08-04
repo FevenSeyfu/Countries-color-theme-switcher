@@ -28,7 +28,7 @@ const Filter = () => {
       </button>
       {isMenuOpen && (
         <div
-          className={`${theme === 'dark' ? 'bg-dark-blue text-white ring-white' : 'bg-white ring-black'}  absolute left-0 mt-1 w-full rounded-md shadow-lg  ring-1  ring-opacity-5 `}
+          className={`${theme === 'dark' ? 'bg-dark-blue text-white shadow-gray-800' : 'bg-white shadow-gray-400'}  absolute left-0 mt-2 w-full rounded-md shadow-md  `}
           style={{ minWidth: "100%" }}
         >
           <div className="py-1">

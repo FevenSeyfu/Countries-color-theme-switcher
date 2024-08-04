@@ -36,7 +36,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
                     </button>
                 </li>
                 {currentPages.map(number => (
-                    <li key={number} className={`border rounded-md px-2 py-1 text-base ${theme === 'dark' ? `border-very-light-gray text-white ${number === currentPage && ' border-gray-100 bg-gray-100 text-gray-900'}` : `border-dark-gray text-black ${number === currentPage && 'bg-very-dark-blue text-white'}`} `}>
+                    <li key={number} className={`border rounded-md px-2 py-1 text-base ${theme === 'dark' ? `text-white ${number === currentPage && ' border-gray-100 bg-gray-100 text-gray-900 font-bold'}` : `border-dark-gray text-black ${number === currentPage && 'bg-very-dark-blue text-white font-bold'}`} `}>
                         <button onClick={() => paginate(number)}>
                             {number}
                         </button>
